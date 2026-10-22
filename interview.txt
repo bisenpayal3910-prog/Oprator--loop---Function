@@ -1,0 +1,246 @@
+ ============================ JavaScript Interview Questions 11–20=========================
+
+
+
+11. What are the different types of operators in JavaScript?
+
+Answer: Operators are symbols used to perform operations on values and variables.
+Operator type	             Example	                          Meaning
+Arithmetic	                  10 + 5	                          Addition
+Assignment                     x = 10	                        Assign value
+Comparison                 	10 > 5	                            Compare values
+Logical	                        a && b	                         Logical AND
+Increment	                   x++	                            Increase by 1
+Ternary	                  age >= 18 ? "Adult" : "Minor"	     Conditional expression
+
+Nullish coalescing	x ?? "Default"	Fallback when null or undefined
+
+Example:
+let a = 10;
+let b = 5;
+
+console.log(a + b);  // 15
+console.log(a > b);  // true
+console.log(a === b); // false
+
+
+12. What is the difference between if-else and switch?
+Answer: if-else is used to evaluate conditions, while switch is useful when comparing one expression against multiple possible values.
+
+Example using if-else:
+let marks = 75;
+
+if (marks >= 80) {
+    console.log("Grade A");
+} else if (marks >= 60) {
+    console.log("Grade B");
+} else {
+    console.log("Grade C");
+}
+
+
+Output: Grade B
+
+Example using switch:
+let day = 2;
+
+switch (day) {
+    case 1:
+        console.log("Monday");
+        break;
+    case 2:
+        console.log("Tuesday");
+        break;
+    default:
+        console.log("Invalid day");
+}
+
+
+Output: Tuesday
+
+Interview tip: Ranges aur complex conditions ke liye if-else useful hai. Fixed values ke multiple cases ke liye switch convenient hai.
+
+
+
+13. What are loops in JavaScript?
+
+Answer: A loop is used to execute a block of code repeatedly while a condition is satisfied or for each item in a collection.
+
+JavaScript ke common loops:
+- for
+- while
+- do...while
+- for...in
+- for...of
+Example:
+for (let i = 1; i <= 5; i++) {
+    console.log(i);
+}
+
+
+Output:
+1
+2
+3
+4
+5
+
+
+14. Difference between for, while, and do-while
+
+Loop	How it works
+
+for	Initialization, condition aur update ek hi statement mein
+while	Condition pehle check hoti hai
+do...while	Code pehle execute hota hai, condition baad mein check hoti hai
+Example:
+let i = 1;
+
+do {
+    console.log(i);
+    i++;
+} while (i <= 3);
+
+
+Output: 1 2 3
+
+Important: do...while loop kam se kam ek baar execute hota hai, even if the condition is initially false.
+
+
+
+15. Difference between for...in and for...of
+
+
+for...in object ki enumerable property keys par iterate karta hai.
+
+for...of iterable values par iterate karta hai, jaise arrays aur strings.
+
+Example:
+const colors = ["Red", "Blue"];
+
+for (let index in colors) {
+    console.log(index);
+}
+// 0, 1
+
+for (let color of colors) {
+    console.log(color);
+}
+// Red, Blue
+
+
+Remember:
+- for...in → keys
+- for...of → values
+
+
+
+16. What is a function in JavaScript?
+
+
+Answer: A function is a reusable block of code designed to perform a particular task.
+
+Example:
+function add(a, b) {
+    return a + b;
+}
+
+console.log(add(10, 20)); // 30
+
+
+Here:
+- add = function name
+- a, b = parameters
+- 10, 20 = arguments
+- return = sends the result back to the caller
+Functions help make code reusable and organized.
+17. Difference between function declaration and function expression
+Function declaration:
+function greet() {
+    console.log("Hello");
+}
+
+greet();
+
+
+Function expression:
+const greet = function() {
+    console.log("Hello");
+};
+
+greet();
+
+
+Main difference: Function declarations can generally be called before their declaration because the function is initialized during scope setup. Function expressions assigned to let or const cannot be called before the assignment is evaluated.
+
+
+
+
+18. What is an arrow function?
+
+
+Answer: An arrow function is a shorter syntax for writing function expressions.
+
+Example:
+const multiply = (a, b) => a * b;
+
+console.log(multiply(4, 5)); // 20
+
+
+Traditional function:
+function square(n) {
+    return n * n;
+}
+
+
+Arrow function:
+const square = n => n * n;
+
+
+Important interview point: Arrow functions do not have their own this or arguments binding. Their this comes from the surrounding lexical scope.
+
+
+
+19. What is a callback function?
+
+
+Answer: A callback is a function passed to another function so that it can be called by that function.
+
+Example:
+function greet(name, callback) {
+    console.log("Hello " + name);
+    callback();
+}
+
+function message() {
+    console.log("Welcome to JavaScript!");
+}
+
+greet("Payal", message);
+
+
+Output:
+Hello Payal
+Welcome to JavaScript!
+
+
+Yahan message function ko greet() ke andar callback ke roop mein pass kiya gaya hai.
+
+Callbacks synchronous bhi ho sakte hain aur asynchronous bhi.
+
+
+
+20. Difference between parameters and arguments
+
+
+Parameters: Variables listed in the function definition.
+
+Arguments: Actual values passed when calling the function.
+function greet(name) { // name = parameter
+    console.log("Hello " + name);
+}
+
+greet("Payal"); // "Payal" = argument
+
+
+Output: Hello Payal
